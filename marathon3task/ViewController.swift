@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     func setupView() {
-        // Настройка
+
         squareView = GradientSquareView()
 //        squareView.backgroundColor = .systemBlue
 //        squareView.layer.cornerRadius = 12
@@ -40,7 +40,6 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
 
             squareView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            
             squareView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 100),
             squareView.widthAnchor.constraint(equalToConstant: 100),
             squareView.heightAnchor.constraint(equalToConstant: 100),
@@ -50,7 +49,6 @@ class ViewController: UIViewController {
             slider.topAnchor.constraint(equalTo: squareView.layoutMarginsGuide.topAnchor, constant: 150)
         ])
         
-        // Добавляем действия для слайдера
         slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
         slider.addTarget(self, action: #selector(sliderReleased(_:)), for: [.touchUpInside, .touchUpOutside])
     }
